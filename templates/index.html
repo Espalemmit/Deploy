@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Heart-Attack Prediction
+    </title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            color: aliceblue;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Heart-Attack Prediction</h1>
+    <div>
+        <form method="post" action="/predict">
+            <label for="age">Tuổi:</label><br>
+            <input value="{{age}}" type="number" name="age"><br>
+            
+            <label for="sex">Giới tính:</label><br>
+            <input value="{{sex}}" type="number" name="sex"><br>
+            
+            <label for="cp">Dạng đau ngực - Chest Pain:</label><br>
+            <input value="{{cp}}" type="number" name="cp"><br>
+            
+            <label for="trestbps">Huyết áp lúc nghỉ (mmHg):</label><br>
+            <input value="{{trestbps}}" type="number" name="trestbps"><br>
+            
+            <label for="chol">Mỡ trong máu - Cholesterol (mg/dl):</label><br>
+            <input value="{{chol}}" type="number" name="chol"><br>
+            
+            <label for="fbs">Đường huyết (mg/dl):</label><br>
+            <input value="{{fbs}}" type="number" name="fbs"><br>
+            
+            <label for="restecg">Kết quả điện tâm đồ - ECG:</label><br>
+            <input value="{{restecg}}" type="number" name="restecg"><br>
+
+            <label for="thalach">Nhịp tim tối đa đạt được:</label><br>
+            <input value="{{thalach}}" type="number" name="thalach"><br>
+            
+            <label for="exang">Đau thắt ngực khi tập thể dục:</label><br>
+            <input value="{{exang}}" type="number" name="exang"><br>
+            
+            <label for="oldpeak">Độ suy giảm sóng ST - Oldpeak (mm):</label><br>
+            <input value="{{oldpeak}}" type="number" step="0.1" name="oldpeak"><br>
+
+            <label for="slope">Độ dốc đoạn sóng ST - Slope:</label><br>
+            <input value="{{Slope}}" type="number" name="slope"><br>
+
+            <label for="ca">Số lượng mạch máu lớn ở tim:</label><br>
+            <input value="{{ca}}" type="number" name="ca"><br>
+
+            <label for="thal">Mức độ Thalassemia:</label><br>
+            <input value="{{thal}}" type="number" name="thal"><br>
+            
+            <div>
+                <button type="submit">
+                    Predict
+                </button>
+                <a href="/">Reset</a>
+            </div>
+        </form>
+
+    </div>
+    <h1>{{ prediction }}</h1>
+</body>
+
+</html>
+
+<!--
+    {
+  "age": 52,
+  "sex": 1,
+  "cp": 0,
+  "trestbps": 125,
+  "chol": 212,
+  "fbs": 0,
+  "restecg": 1,
+  "thalach": 168,
+  "exang": 0,
+  "oldpeak": 1,
+  "slope": 2,
+  "ca": 2,
+  "thal": 3
+}
+-->
